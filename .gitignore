@@ -1,8 +1,5 @@
-#Pliki projektowe IntelliJ
-.gradle
-#gradle
-/build/
-
+target/
+!.mvn/wrapper/maven-wrapper.jar
 
 ### STS ###
 .apt_generated
@@ -14,7 +11,9 @@
 
 ### IntelliJ IDEA ###
 .idea
+*.iws
 *.iml
+*.ipr
 
 ### NetBeans ###
 nbproject/private/
