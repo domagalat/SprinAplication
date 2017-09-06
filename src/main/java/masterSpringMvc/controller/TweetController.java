@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
@@ -23,9 +22,10 @@ import java.util.List;
 public class TweetController {
     @Autowired
     private Twitter twitter;
+
     @RequestMapping("/")
     public String home() {
-        return "searchPage";
+        return "/searchPage";
     }
     @RequestMapping("/result")
     public String hello(@RequestParam(defaultValue = "masterSpringMVC4") String search, Model model) {
@@ -45,17 +45,4 @@ public class TweetController {
         redirectAttributes.addAttribute("search", search);
         return "redirect:result";
     }
-
-//    @Inject
-//    private Environment environment;
-//
-//    @Bean
-//    public ConnectionFactoryLocator connectionFactoryLocator() {
-//        ConnectionFactoryRegistry registry = new ConnectionFactoryRegistry();
-//        registry.addConnectionFactory(new TwitterConnectionFactory(
-//                environment.getProperty("twitter.consumerKey"),
-//                environment.getProperty("twitter.consumerSecret")));
-//        return registry;
-//    }
-
 }
