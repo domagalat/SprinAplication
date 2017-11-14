@@ -15,9 +15,6 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 
-/**
- * Created by TomDom on 2017-07-14.
- */
 @Controller
 public class TweetController {
     @Autowired
